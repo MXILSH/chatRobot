@@ -4,7 +4,7 @@
 $_BACKGROUND_COLOR = "#2196F3";
 ?>
 <head>
-    <title>一天一千次郎</title>
+    <title>一天100次郎</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,14 +48,14 @@ $_BACKGROUND_COLOR = "#2196F3";
 <div class="mui-appbar mui--z2" style="background-color:<?php echo $_BACKGROUND_COLOR;?>;">
     <table width="100%">
         <tr style="vertical-align:middle;">
-            <td class="mui--appbar-height" align = "center" valign="center"><p style="font-size:22px;text-align: center;">一天一千次郎</p></td>
+            <td class="mui--appbar-height" align = "center" valign="center"><p style="font-size:22px;text-align: center;">一天100次郎</p></td>
         </tr>
     </table>
 </div>
 <div class="mui-panel">
     <div class="mui-panel mui--z3">
         <!-- 这里放iframe标签 -->
-        <iframe id="chat-form" scrolling="yes" src="chat.php" height="250px" width="100%" frameborder="no" style="margin:auto;"></iframe>
+        <iframe id="chat-form" scrolling="yes" src="chat.php" height="250px" width="100%" frameborder="no" style="margin:auto;" onload="scrolltobuttom();"></iframe>
     </div>
     <div class="mui-panel mui--z3">
         <form class="mui-form" name="form-chat">
@@ -74,7 +74,7 @@ $_BACKGROUND_COLOR = "#2196F3";
     </div>
 
     <p style="text-align:center;">PHP是世界上最好的语言</p>
-    <p style="text-align:center;">每天前一千次比较智能（包括所有访问用户的聊天），之后不太智能</p>
+    <p style="text-align:center;">每天前100次比较智能（所有用户共享100次），之后不太智能</p>
 </footer>
 </body>
 </html>
