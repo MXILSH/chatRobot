@@ -4,7 +4,7 @@
 $_BACKGROUND_COLOR = "#2196F3";
 ?>
 <head>
-    <title>一天100次郎</title>
+    <title>比较智能的机器人</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,22 +20,8 @@ $_BACKGROUND_COLOR = "#2196F3";
             }
             var iframe = document.getElementById("chat-form");
             iframe.src = "chat.php?chat-value=" + chatvalue;
-            //iframe.contentDocument.body.scrollTo(0,99999999);
             textarea.value = "";
             textarea.focus();
-            // if(window.XMLHttpRequest){
-            //     xmlhttp=new XMLHttpRequest();
-            // }else{
-            //     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-            // }
-            // xmlhttp.onreadystatechange        echo "<tr>", "<td align=\"left\"><button class=\"mui-btn\" style=\"background-color:$_BACKGROUND_COLOR;color:white;\">$value</button></td>", "</tr>";=function () {
-            //     if(xmlhttp.readyState==4 && xmlhttp.status==200){
-            //
-            //     }
-            //
-            // }
-            // xmlhttp.open("GET","chat.php?chat-value="+chatvalue,true);
-            // xmlhttp.send();
         }
         function scrolltobuttom() {
             var iframe_cw = document.getElementById("chat-form").contentWindow;
@@ -48,7 +34,7 @@ $_BACKGROUND_COLOR = "#2196F3";
 <div class="mui-appbar mui--z2" style="background-color:<?php echo $_BACKGROUND_COLOR;?>;">
     <table width="100%">
         <tr style="vertical-align:middle;">
-            <td class="mui--appbar-height" align = "center" valign="center"><p style="font-size:22px;text-align: center;">一天100次郎</p></td>
+            <td class="mui--appbar-height" align = "center" valign="center"><p style="font-size:22px;text-align: center;">比较智能的机器人</p></td>
         </tr>
     </table>
 </div>
@@ -74,7 +60,6 @@ $_BACKGROUND_COLOR = "#2196F3";
     </div>
 
     <p style="text-align:center;">PHP是世界上最好的语言</p>
-    <p style="text-align:center;">每天前100次比较智能（所有用户共享100次），之后不太智能</p>
 </footer>
 </body>
 </html>
