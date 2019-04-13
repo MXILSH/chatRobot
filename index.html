@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>比较智能的机器人</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="mui/css/mui.min.css">
+    </head>
+    <body>
+        <header class="mui-bar mui-bar-nav">
+            <a id="aboutinfo" class="mui-icon mui-icon-chatbubble"></a>
+			<h1 class="mui-title">比较智能的机器人</h1>
+		</header>
+        <div class="mui-content">
+			<div class="mui-card">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<iframe id="chat-form" scrolling="yes" src="chat.php" height="300px" width="100%" frameborder="no" style="margin:auto;" onload="scrolltobuttom();"></iframe>
+					</div>
+				</div>
+			</div>
+            <div class="mui-card">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<form name="form-chat">
+                            <div class="mui-input-row">
+                                <textarea id="chatvalue" rows="5" placeholder="你想对我说什么？"></textarea>
+                            </div>
+                            <div align="right">
+                            <button type="button" name="Submit" data-loading-text="发送中" class="mui-btn mui-btn-primary">发送</button>
+                            </div>
+                        </form>
+					</div>
+				</div>
+			</div>
+		</div>
+        <footer>
+            <div align="center">
+                <a style="text-align: center" href="https://github.com/MXILSH/chatRobot">github开源地址</a>
+            </div>
+            <p style="text-align:center;">PHP是世界上最好的语言</p>
+        </footer>
+    <script src="mui/js/mui.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+			//mui初始化
+			mui.init();
+            mui(document.body).on('tap', '.mui-btn', function(e) {
+                mui(this).button('loading');
+                textarea = document.getElementById("chatvalue");
+                chatvalue = textarea.value;
+                if(chatvalue.length == 0){
+                    mui.toast('貌似还没有输入内容哦！');
+                    mui(this).button('reset');
+                    return;
+                }
+                var iframe = document.getElementById("chat-form");
+                iframe.src = "chat.php?chat-value=" + chatvalue;
+                textarea.value = "";
+                textarea.focus();
+                setTimeout(function() {
+                    mui(this).button('reset');
+                }.bind(this), 500);
+            });
+			mui.toast('欢迎体验比较智能的机器人',{duration:'long'});
+            function scrolltobuttom() {
+                var iframe_cw = document.getElementById("chat-form").contentWindow;
+                var iframe_doc = iframe_cw.document;
+                iframe_cw.scroll(0,iframe_doc.body.scrollHeight);
+            }
+            document.getElementById("aboutinfo").addEventListener('tap', function() {
+				mui.alert('本服务由timecan.ga提供服务\n将于2019年4月30日停止服务\n\n项目使用到的机器人：\n图灵机器人:\nhttp://openapi.tuling123.com/openapi/api/v2\n青云客：\nhttp://api.qingyunke.com/\n微梦：\nhttp://drea.cc/\n\n项目用到的开源项目：\nMUI(最初):\nhttps://www.muicss.com/\nMUI(现在):\nhttp://dev.dcloud.net.cn/mui/\n\n本项目仅供娱乐与学习交流\n无聊来聊天的祝聊得愉快\n欢迎访问github查看源码', '关于本服务', function() {
+				});
+			});
+	</script>
+    </body>
+</html>
